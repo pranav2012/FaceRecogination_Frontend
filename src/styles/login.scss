@@ -1,0 +1,685 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.wrapper {
+    width: 850px;
+    height: 600px;
+    border-radius: 20px;
+    position: relative;
+    margin: 2% auto;
+    box-shadow: 2px 18px 70px 0px #9D9D9D;
+    overflow: hidden;
+}
+
+.signleft{
+    margin-right: 5.5vw;
+}
+.login-text {
+    width: 850px;
+    background: linear-gradient(to left, #ab68ca, #de67a3); 
+    position: absolute;
+    top: -300px;
+    box-sizing: border-box;
+    padding: 6%;
+    transition: all 0.5s ease-in-out;
+    z-index: 11;
+}
+.ll{
+    height:450px;
+}
+.sl
+{
+    height:500px;
+}
+.text {
+    margin-left: 20px;
+    color: #fff;
+    display: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.3s;
+
+    a, a:visited {
+        font-size: 36px;
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+        text-decoration: none;  
+        font-weight: bold;
+        display: block;
+    }
+
+    hr {
+        width: 7vw;
+        float: left;
+        color: white;
+        font-size: 16px;
+    }
+
+    input {
+        margin-top: 30px;
+        height: 40px;
+        width: 300px;
+        border-radius: 2px;
+        background-color: #444;
+        opacity: 0.6;
+        outline: none;
+        color: #fff;
+        padding-left: 10px;
+    }
+
+    .top {
+        margin-top: 26px;
+    }
+
+    button {
+        margin-top: 60px;
+        height: 40px;
+        cursor: pointer;
+        width: 140px;
+        outline: none;
+        transition: 0.8s;
+        position: relative;
+    }
+
+    .signup-btn, .login-btn {
+        background: transparent;
+        border: 2px solid #fff;;
+        border-radius: 2px;
+        color: #fff;
+        margin-right: 9px;
+        margin-top: 28px;
+    }
+}
+
+.cta {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #696a86;
+    border: 2px solid #fff;
+    position: absolute;
+    bottom: -30px;
+    left: 390px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.call-text {
+    background-color: #fff;
+    width: 850px;
+    height: 450px;
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+    box-sizing: border-box;
+    text-align: center;
+
+    h1 {
+        font-size: 42px;
+        margin-top: 10%;
+        color: #696a86;
+
+        span {
+            color: #333;
+            font-weight: bolder;    
+        }
+    }
+
+    button {
+        height: 40px;
+        width: 180px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background: linear-gradient(to left, #ab68ca, #de67a3); 
+        color: #fff;
+        font-weight: bolder;
+        margin-top: 30px;
+        outline: none;
+        transition: 0.8s;
+        position: relative;
+    }
+    button:hover{
+        font-size: 17px;
+    }
+}
+
+.show-hide {
+    display: block;
+}
+
+.expand {
+    transform: translateY(300px);
+}
+
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  .ctan{
+    left: 426px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .mid{
+      position: relative;
+  }
+      .vl,.svl{
+        position: absolute;
+        top:0;
+        left:0;
+        border-left: 2px solid white;
+        height: 350px;
+      }
+    .mid h3{
+        position: absolute;
+        top: 146px;
+        left: -21px;
+        letter-spacing: 3px;
+        font-size: 28px;
+        font-family: cursive;
+        background: #c168b9;
+    }
+
+    .leftside{
+      margin-right: 42px;
+    }
+    .rightside,.srightside{
+      display: flex;
+      flex-direction: column;
+      margin-left: 7vw;
+      align-content: center;
+      
+      button{
+        background: transparent;
+        border: 2px solid #fff;;
+        border-radius: 2px;
+        width: 18vw;
+        color: #fff;
+        transition: 0.8s;
+        position: relative;
+      }
+    }
+    .fl{
+      display: flex;
+  }
+  .nt{
+      font-size: 14px;
+  }
+ .forgotp{
+     margin-top: 18px;
+ }
+ .hide{
+     display: none;
+ }
+
+.signleft{
+    input {
+        margin-top: 10px;
+        height: 28px;
+        width: 300px;
+        border-radius: 2px;
+        background-color: #444;
+        opacity: 0.6;
+        outline: none;
+        color: #fff;
+        padding-left: 10px;
+    }
+    .top{
+        margin-top: 18px;
+    }
+    .nt{
+        font-size: 12px;
+    }
+    hr{
+        width: 11vw;
+    }
+    .login-btn{
+        margin-left: 1.8vw;
+        width: 18vw;
+    }     
+} 
+.btn1:hover,.btn2:hover{
+ color: rgb(250, 110, 255);
+}
+.btn1::before, .btn2::before{
+ content: "";
+ position: absolute;
+ left: 0;
+ width: 100%;
+ height: 0%;
+ background: #fff;
+ z-index: -1;
+ transition: 0.8;
+}
+
+.btn1:before{
+top: 0;
+border-radius: 0 0 40% 40%;
+}
+.btn2:before{
+bottom: 0;
+border-radius: 40% 40% 0 0 ;
+}
+.btn1:hover::before,.btn2:hover::before{
+ height: 100%;
+}
+.frgt{
+    margin-left: 2vw;
+    input{
+        width:400px;
+    }
+    hr{
+        width: 80%;
+    }
+}
+.error{
+    border: 1px solid red;
+}
+.nb{
+    border:none;
+}
+.input-feedback {
+    color: white;
+    font-size: 12px;
+    font-family: roman;
+    margin-top: .25rem;
+    background-color: #cabebe3b;
+    width: max-content;
+    margin-left: 4px;
+  }
+
+  @media screen and (max-width:844px){
+    .wrapper {
+        width: 380px;
+        height: 450px;
+        margin: 130px auto;
+    }
+    .login-text {
+        width: 380px;
+        top: -111px;
+        padding: 6%;
+    }
+    .ll{
+        height:250px;
+    }
+    .sl
+    {
+        height:380px;
+    }
+    .cta {
+        width: 48px;
+        height: 48px;
+        bottom: -25px;
+        left: 160px;
+    }
+
+    .call-text {
+        width: 380px;
+        height: 310px;
+        padding: 10%;
+    
+        h1 {
+            font-size: 21px;
+            margin-top: 10%;
+            color: #696a86;
+    
+            span {
+                color: #333;
+                font-weight: bolder;    
+            }
+        }
+    
+        button {
+            height: 30px;
+            width: 110px;
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+    }
+    .expand {
+        transform: translateY(110px);
+    }
+    .text {
+        margin-left: 2px;
+        
+    
+        a, a:visited {
+            margin-top: 8px;
+            font-size: 22px;
+        }
+    
+        hr {
+            width: 16vw;
+        }
+    
+        input {
+            margin-top: 15px;
+            height: 25px;
+            width: 150px;
+            font-size: 11px;
+            border-bottom: 1px solid white;
+            background: none;
+            padding-left: 6px;
+        }
+    
+        .top {
+            margin-top: 10px;
+        }
+    
+        button {
+            margin-top: 10px;
+            height: 28px;
+            font-size: 12px;
+            width: 68px;
+            border-radius: 18px;
+        }
+    
+        .signup-btn, .login-btn {
+            border-radius: 18px;
+            color: #fff;
+            margin-right: 6px;
+            margin-top: 18px;
+        }
+        .forgotp{
+            margin-top: 12px;
+            margin-left: 8px;
+            p{
+                font-size: 11px;
+            }
+        }
+    }
+    .vl{
+        top:0;
+        left:-24px;
+        height: 200px;
+    }
+   .mid .lh{
+        top: 93px;
+        left: -39px;
+        letter-spacing: 3px;
+        font-size: 19px;
+      }
+      .rightside{
+        margin:40px 0 0 12px;
+        button{
+          border-radius: 18px;
+          width: 96px;
+        }
+    }
+      .frgt{
+        margin-left: 2vw;
+        input{
+            width:300px;
+            height: 26px;
+        }
+        hr{
+            width: 62%;
+        }
+        p{
+            font-size:13px;
+        }
+        a{
+            font-size: 21px;
+        }
+        .signup-btn,.login-btn{
+            font-size: 12px;
+            width: 110px;
+            margin-left: 22px;
+        }
+    }
+    .signleft{
+        input {
+            margin-top: 8px;
+            width: 170px;
+        }
+        .top{
+            margin-top: 18px;
+        }
+        .nt{
+            font-size: 1px;
+        }
+        hr{
+            width: 21vw;
+        }
+        .login-btn{
+            margin-left: 7vw;
+            width: 140px;
+        }
+             
+        .input-feedback {
+            margin-right: 130px;
+          }
+    } 
+    .svl{
+            top:0;
+            left:-24px;
+            height: 300px;
+        }
+      .mid .sh{
+            top: 133px;
+            left: -38px;
+            letter-spacing: 3px;
+            font-size: 19px;
+          }
+          .srightside{
+            margin:50px 0 0 12px;
+            button{
+              border-radius: 18px;
+              width: 96px;
+              margin-top: 22px;
+            }
+          }
+          .input-feedback {
+            font-size: 8px;
+            margin-top: 2px;
+            margin-left: 4px;
+          }       
+} 
+
+ @media screen and (max-width:488px){
+    .wrapper {
+        width: 380px;
+        height: 450px;
+        margin: 130px auto;
+    }
+    .login-text {
+        width: 380px;
+        top: -111px;
+        padding: 6%;
+    }
+    .ll{
+        height:300px;
+    }
+    .sl
+    {
+        height:380px;
+    }
+    .cta {
+        width: 48px;
+        height: 48px;
+        bottom: -25px;
+        left: 160px;
+    }
+
+    .call-text {
+        width: 380px;
+        height: 310px;
+        padding: 10%;
+    
+        h1 {
+            font-size: 21px;
+            margin-top: 10%;
+            color: #696a86;
+    
+            span {
+                color: #333;
+                font-weight: bolder;    
+            }
+        }
+    
+        button {
+            height: 30px;
+            width: 110px;
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+    }
+    .expand {
+        transform: translateY(110px);
+    }
+    .text {
+        margin-left: 2px;
+        
+    
+        a, a:visited {
+            margin-top: 8px;
+            font-size: 22px;
+        }
+    
+        hr {
+            width: 16vw;
+        }
+    
+        input {
+            margin-top: 15px;
+            height: 25px;
+            width: 150px;
+            font-size: 11px;
+            border-bottom: 1px solid white;
+            background: none;
+            padding-left: 6px;
+        }
+    
+        .top {
+            margin-top: 10px;
+        }
+    
+        button {
+            margin-top: 10px;
+            height: 28px;
+            font-size: 12px;
+            width: 68px;
+            border-radius: 18px;
+        }
+    
+        .signup-btn, .login-btn {
+            border-radius: 18px;
+            color: #fff;
+            margin-right: 6px;
+            margin-top: 18px;
+        }
+        .forgotp{
+            margin-top: 12px;
+            margin-left: 8px;
+            p{
+                font-size: 11px;
+            }
+        }
+    }
+    .vl{
+        top:0;
+        left:-24px;
+        height: 200px;
+    }
+   .mid .lh{
+        top: 93px;
+        left: -39px;
+        letter-spacing: 3px;
+        font-size: 19px;
+      }
+      .rightside{
+        margin:40px 0 0 12px;
+        button{
+          border-radius: 18px;
+          width: 96px;
+        }
+    }
+      .frgt{
+        margin-left: 2vw;
+        input{
+            width:300px;
+            height: 26px;
+        }
+        hr{
+            width: 62%;
+        }
+        p{
+            font-size:13px;
+        }
+        a{
+            font-size: 21px;
+        }
+        .signup-btn,.login-btn{
+            font-size: 12px;
+            width: 110px;
+            margin-left: 22px;
+        }
+    }
+    .signleft{
+        input {
+            margin-top: 8px;
+            width: 170px;
+        }
+        .top{
+            margin-top: 18px;
+        }
+        .nt{
+            font-size: 1px;
+        }
+        hr{
+            width: 21vw;
+        }
+        .login-btn{
+            margin-left: 7vw;
+            width: 140px;
+        }
+             
+        .input-feedback {
+            margin-right: 130px;
+          }
+    } 
+    .svl{
+            top:0;
+            left:-24px;
+            height: 300px;
+        }
+      .mid .sh{
+            top: 133px;
+            left: -38px;
+            letter-spacing: 3px;
+            font-size: 19px;
+          }
+          .srightside{
+            margin:50px 0 0 12px;
+            button{
+              border-radius: 18px;
+              width: 96px;
+              margin-top: 22px;
+            }
+          }
+          .input-feedback {
+            font-size: 8px;
+            margin-top: 2px;
+            margin-left: 4px;
+          }       
+} 
+   
+.oth i{
+    border:none;
+    font-size:'26px';
+}
+
+.authname{
+    font-size:'18px';
+}
