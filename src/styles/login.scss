@@ -177,14 +177,14 @@ i {
       .vl,.svl{
         position: absolute;
         top:0;
-        left:0;
+        left:42px;
         border-left: 2px solid white;
         height: 350px;
       }
     .mid h3{
         position: absolute;
-        top: 146px;
-        left: -21px;
+        top: 140px;
+        left: 21px;
         letter-spacing: 3px;
         font-size: 28px;
         font-family: cursive;
@@ -197,8 +197,9 @@ i {
     .rightside,.srightside{
       display: flex;
       flex-direction: column;
-      margin-left: 7vw;
+      margin-left: 8vw;
       align-content: center;
+      margin-top: 70px;
       
       button{
         background: transparent;
@@ -301,17 +302,17 @@ border-radius: 40% 40% 0 0 ;
 
   @media screen and (max-width:844px){
     .wrapper {
-        width: 380px;
+        width: 460px;
         height: 450px;
         margin: 130px auto;
     }
     .login-text {
-        width: 380px;
+        width: 460px;
         top: -111px;
         padding: 6%;
     }
     .ll{
-        height:250px;
+        height:320px;
     }
     .sl
     {
@@ -321,17 +322,17 @@ border-radius: 40% 40% 0 0 ;
         width: 48px;
         height: 48px;
         bottom: -25px;
-        left: 160px;
+        left: 194px;
     }
 
     .call-text {
-        width: 380px;
+        width: 460px;
         height: 310px;
         padding: 10%;
     
         h1 {
             font-size: 21px;
-            margin-top: 10%;
+            margin-top: 18%;
             color: #696a86;
     
             span {
@@ -400,21 +401,21 @@ border-radius: 40% 40% 0 0 ;
         }
     }
     .vl{
-        top:0;
-        left:-24px;
-        height: 200px;
+        top: 0;
+        left: 3px;
+        height: 212px;
     }
    .mid .lh{
-        top: 93px;
-        left: -39px;
+        top: 85px;
+        left: -11px;
         letter-spacing: 3px;
         font-size: 19px;
       }
       .rightside{
-        margin:40px 0 0 12px;
+        margin:80px 0 0 62px;
         button{
           border-radius: 18px;
-          width: 96px;
+          width: 132px;
         }
     }
       .frgt{
@@ -473,10 +474,10 @@ border-radius: 40% 40% 0 0 ;
             font-size: 19px;
           }
           .srightside{
-            margin:50px 0 0 12px;
+            margin:100px 0 0 18px;
             button{
               border-radius: 18px;
-              width: 96px;
+              width: 132px;
               margin-top: 22px;
             }
           }
@@ -489,27 +490,27 @@ border-radius: 40% 40% 0 0 ;
 
  @media screen and (max-width:488px){
     .wrapper {
-        width: 380px;
-        height: 450px;
+        width: 320px;
+        height: 390px;
         margin: 130px auto;
     }
     .login-text {
-        width: 380px;
+        width: 320px;
         top: -111px;
         padding: 6%;
     }
     .ll{
-        height:300px;
+        height:330px;
     }
     .sl
     {
-        height:380px;
+        height:370px;
     }
     .cta {
-        width: 48px;
-        height: 48px;
+        width: 42px;
+        height: 42px;
         bottom: -25px;
-        left: 160px;
+        left: 138px;
     }
 
     .call-text {
@@ -518,9 +519,10 @@ border-radius: 40% 40% 0 0 ;
         padding: 10%;
     
         h1 {
-            font-size: 21px;
-            margin-top: 10%;
+            font-size: 19px;
+            margin-top: 43%;
             color: #696a86;
+            margin-right: 18%;
     
             span {
                 color: #333;
@@ -532,14 +534,15 @@ border-radius: 40% 40% 0 0 ;
             height: 30px;
             width: 110px;
             border-radius: 18px;
-            margin-top: 20px;
+            margin-top: 3%;
+            margin-right: 17%;
         }
     }
     .expand {
         transform: translateY(110px);
     }
     .text {
-        margin-left: 2px;
+        margin-left: -12px;
         
     
         a, a:visited {
@@ -556,6 +559,8 @@ border-radius: 40% 40% 0 0 ;
             height: 25px;
             width: 150px;
             font-size: 11px;
+            color: black;
+            font-weight: bolder;
             border-bottom: 1px solid white;
             background: none;
             padding-left: 6px;
@@ -590,7 +595,7 @@ border-radius: 40% 40% 0 0 ;
     .vl{
         top:0;
         left:-24px;
-        height: 200px;
+        height: 260px;
     }
    .mid .lh{
         top: 93px;
@@ -599,7 +604,7 @@ border-radius: 40% 40% 0 0 ;
         font-size: 19px;
       }
       .rightside{
-        margin:40px 0 0 12px;
+        margin:86px 0 0 0;
         button{
           border-radius: 18px;
           width: 96px;
@@ -608,7 +613,7 @@ border-radius: 40% 40% 0 0 ;
       .frgt{
         margin-left: 2vw;
         input{
-            width:300px;
+            width:280px;
             height: 26px;
         }
         hr{
@@ -646,22 +651,23 @@ border-radius: 40% 40% 0 0 ;
         }
              
         .input-feedback {
-            margin-right: 130px;
+            margin-right: 0px;
+            width:160px;
           }
     } 
     .svl{
-            top:0;
-            left:-24px;
+            top: 10px;
+            left: 0px;
             height: 300px;
         }
       .mid .sh{
-            top: 133px;
-            left: -38px;
+            top: 126px;
+            left: -14px;
             letter-spacing: 3px;
             font-size: 19px;
           }
           .srightside{
-            margin:50px 0 0 12px;
+            margin:93px 0 0 13px;
             button{
               border-radius: 18px;
               width: 96px;

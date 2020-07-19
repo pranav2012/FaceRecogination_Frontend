@@ -89,7 +89,7 @@ class Login extends Component{
                             )}
                             <br />
                             <a className='forgotp' href='#h' onClick={this.props.frgtpass}><p className='nt'>Forgot Password?</p></a>
-                            {this.state.log === 1 && <p>Invalid username or Password</p>}
+                            {this.state.log === 1 && <p className='nt'>Invalid username or Password</p>}
                             <button type='submit' disabled={isSubmitting} className="btn1 login-btn">Log In</button>
                             <button className="btn2 signup-btn" type='button' onClick={this.props.signupfunc}>Sign Up</button>
                         </form>

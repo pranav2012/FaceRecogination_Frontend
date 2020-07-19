@@ -154,8 +154,8 @@ class Signup extends Component{
                             <div className="input-feedback">{errors.password}</div>
                         )}
                         <br />
-                        {this.state.issubmitted===1 && <p>Succesfully Registered! Redirecting...</p>}
-                        {this.state.isregistered===1 && <p>Already Registered or Username is Taken!</p>}
+                        {this.state.issubmitted===1 && <p className='nt'>Succesfully Registered! Redirecting...</p>}
+                        {this.state.isregistered===1 && <p className='nt'>Already Registered or Username is Taken!</p>}
                         <a className='forgotp' href='#h'><p className='nt' onClick={this.signstate}>Already Registered?</p></a>
                         <button className="btn2 login-btn" disabled={isSubmitting} type='submit'>Register</button>
                     </form>
