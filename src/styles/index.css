@@ -15,8 +15,3 @@ body{
 .hide{
     display: none;
 }
-canvas {
-    height: 80vh;
-    width: 100vw;
-    background-attachment:fixed;
-  }

@@ -3,7 +3,6 @@ import '../styles/App.css';
 import Particles from 'react-particles-js';
 import InnerApp from './innerApp';
 import Out from './Out';
-import {BrowserRouter} from 'react-router-dom';
 
 const backend_url = 'https://facerecogination-back-end.herokuapp.com';
 
@@ -27,6 +26,10 @@ class App extends Component {
       boxes: [],
       faces: 0,
       detect_clicked: false,
+      isimage: false,
+      uploadclicked: false,
+      imginbase64: '',
+      localinput: '',
       user: {
         name: localStorage.getItem('username'),
         enteries: localStorage.getItem('enteries'),
@@ -34,6 +37,50 @@ class App extends Component {
       }
     }
   }
+
+  setimgurl = (imgurl) => {
+    this.setState({ localinput: imgurl });
+  }
+
+  setuploadstate = (isimage, uploadclicked, base64) => {
+    this.setState({
+      isimage: isimage,
+      uploadclicked: uploadclicked,
+      imginbase64: base64
+    });
+  }
+
+  imgdataapi = () =>{
+        fetch(backend_url + '/upload', {
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            file: this.state.imginbase64
+          })
+        }).then(res => res.json())
+          .then(response => {
+            if (response.status === 'sucess') {
+              fetch(backend_url + '/image', {
+                method: 'put',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: localStorage.getItem('id')
+                })
+              }).then(response => response.json())
+                .then(count => {
+                  this.setState({
+                    user: { enteries: localStorage.setItem('enteries', count) }
+                  })
+                }).catch(err => console.log(err))
+              this.displayfacebox(this.Calculatefacedata(response.data))
+            }
+            else {
+              this.setState({ faces: 'no face detected!' })
+            }
+          }).catch(err => console.log('error uploading image'));
+  }
+
+
   loaduser = (user) => {
     this.setState({
       user: {
@@ -66,6 +113,19 @@ class App extends Component {
     return dta;
   }
 
+  resetval = () => {
+    this.setState({ 
+      detect_clicked: false,
+      boxes: [],
+      faces: 0 ,
+      input: '',
+      localinput: '',
+      imginbase64:'',
+      isimage:false,
+      uploadclicked:false
+     });
+  }
+
   displayfacebox = (boxes) => {
     this.setState({ boxes: boxes })
   }
@@ -95,18 +155,33 @@ class App extends Component {
   }
 
   onInputChange = (event) => {
-    this.setState({detect_clicked:false});
-    this.setState({ boxes: [] });
-    this.setState({ faces: 0 });
-    this.setState({ input: event.target.value });
+    this.setState({ 
+      detect_clicked: false,
+      boxes: [],
+      faces: 0 ,
+      input: event.target.value,
+      localinput: '',
+      imginbase64:'',
+      isimage:false,
+      uploadclicked:false
+     });
   }
 
   onSubmit = () => {
-    if (this.state.detect_clicked || this.state.input === '') {
-      void(0);
+    if (this.state.input === '' || this.state.detect_clicked) {
+        if(this.state.uploadclicked){
+          this.imgdataapi();
+        }
+        else{
+          void(0);
+        }
     }
     else {
-      this.setState({detect_clicked:true})
+      if ((this.state.isimage && this.state.uploadclicked)) {
+        this.imgdataapi();
+      }
+      else{
+      this.setState({ detect_clicked: true })
       fetch(backend_url + '/imageurl', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
@@ -129,27 +204,26 @@ class App extends Component {
                   user: { enteries: localStorage.setItem('enteries', count) }
                 })
               }).catch(err => console.log(err))
-          this.displayfacebox(this.Calculatefacedata(response.data))
+            this.displayfacebox(this.Calculatefacedata(response.data))
           }
-          else{
-            this.setState({faces:'no face detected!'})
+          else {
+            this.setState({ faces: 'no face detected!' })
           }
         })
         .catch(err => console.log(err));
+      }
     }
   }
 
   render() {
     return (
       <div className="App">
-      <BrowserRouter basename='/'>
         <Particles params={particles_options} className='particles' />
         {
           this.state.signclick === 'loggedout' ?
             <Out loaduser={this.loaduser} logout={this.logout} signclick={this.signout} backend_url={backend_url} /> :
-            <InnerApp faces={this.state.faces} boxes={this.state.boxes} onInputChange={this.onInputChange} ImgURL={this.state.input} onSubmit={this.onSubmit} logout={this.logout} />
+            <InnerApp resetval={this.resetval} setuploadstate={this.setuploadstate} setimgurl={this.setimgurl} faces={this.state.faces} boxes={this.state.boxes} onInputChange={this.onInputChange} localinput={this.state.localinput} ImgURL={this.state.input} onSubmit={this.onSubmit} logout={this.logout} />
         }
-      </BrowserRouter>
       </div>
     );
   }

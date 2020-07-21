@@ -5,15 +5,14 @@ import Logo from '../Components/MainApp/Logo';
 import Nav from '../Components/MainApp/Nav';
 import ImgBox from '../Components/MainApp/ImgBox';
 
-
-function InnerApp({faces,logout,onInputChange,onSubmit,ImgURL,boxes}) {
+function InnerApp({resetval,localinput,setimgurl,faces,logout,onInputChange,onSubmit,ImgURL,boxes,backend_url,setuploadstate}) {
     return (
       <>
         <Nav logout={logout}/>
         <Rank/>
         <Logo/>
-        <Box onInputChange={onInputChange} faces={faces} onSubmit={onSubmit}/>
-        <ImgBox boxes={boxes} ImgURL={ImgURL}/>
+        <Box resetval={resetval} setuploadstate={setuploadstate} setimgurl={setimgurl} onInputChange={onInputChange} faces={faces} onSubmit={onSubmit}/>
+        <ImgBox boxes={boxes} localinput={localinput} ImgURL={ImgURL}/>
       </>
     );
   }

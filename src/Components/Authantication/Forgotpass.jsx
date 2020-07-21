@@ -40,6 +40,7 @@ class Forgotpass extends Component {
 
                 validationSchema={Yup.object().shape({
                     email: Yup.string()
+                        .trim()
                         .email("invalid email")
                         .required("Required")
                 })}

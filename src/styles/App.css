@@ -14,7 +14,9 @@
     display:flex;
     justify-content: center;
 }
-
+.err{
+    font-size: 14px;
+}
 .navlogo{
     font-family: 'Pacifico', cursive;
     font-size: 32px;
@@ -139,7 +141,9 @@ height: 36px;
     .navp{
         font-size: 15px;
     }
-    
+    .err{
+        font-size: 13px;
+    }
     .navp:hover{
         font-size: 16px;
     }
@@ -190,6 +194,10 @@ height: 36px;
         font-size: 16px;
     }
 
+    .err{
+        font-size: 11px;
+    }
+
     .box{
         width: 70%;
         margin-left: 23%;
@@ -197,7 +205,7 @@ height: 36px;
     .navp{
         font-size: 14px;
     }
-    
+
     .navp:hover{
         font-size: 15px;
     }
@@ -232,8 +240,8 @@ height: 36px;
         font-size: 36px;
     }
     .inpimg{
-        width: 16%;
-        font-size: 10px;
+        width: 12%;
+        font-size: 11px;
         font-weight: 600;
     }
 
@@ -243,7 +251,7 @@ height: 36px;
  
     .inf{
         font-weight: 800;
-        font-size: 10px;
+        font-size: 9px;
     }
     
     .fdtct{
@@ -256,6 +264,9 @@ height: 36px;
         margin-left: 22%;
     }
 
+    .err{
+        font-size: 10px;
+    }
     .nav{
         margin-right: 20px;
     }
@@ -295,13 +306,17 @@ height: 36px;
     }
 
     .userg{
-        font-size: 18px;
+        font-size: 17px;
         margin-top: 7%;
     }
 
     .rank{
-        font-size: 28px;
+        font-size: 26px;
         margin-bottom: 8%;
+    }
+
+    .nt{
+        font-size: 8px;
     }
 
     .inpimg{

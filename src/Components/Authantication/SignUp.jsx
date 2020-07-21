@@ -68,12 +68,15 @@ class Signup extends Component{
 
             validationSchema={Yup.object().shape({
                 name: Yup.string()
+                    .trim()
                     .required("required")
                     .matches(/^[a-z A-Z]+$/,"invalid name"),// eslint-disable-line
                 email: Yup.string()
+                    .trim()
                     .email()
                     .required("Required"),
                 user: Yup.string()
+                    .trim()
                     .required("Required")
                     .min(4,"too short")
                     .matches(/^[a-zA-Z0-9\_\.]+$/,"invalid username"),  // eslint-disable-line
@@ -154,9 +157,9 @@ class Signup extends Component{
                             <div className="input-feedback">{errors.password}</div>
                         )}
                         <br />
-                        {this.state.issubmitted===1 && <p className='nt'>Succesfully Registered! Redirecting...</p>}
-                        {this.state.isregistered===1 && <p className='nt'>Already Registered or Username is Taken!</p>}
-                        <a className='forgotp' href='#h'><p className='nt' onClick={this.signstate}>Already Registered?</p></a>
+                        {this.state.issubmitted===1 && <p className='err'>Succesfully Registered! Redirecting...</p>}
+                        {this.state.isregistered===1 && <p className='err'>Already Registered or Username is Taken!</p>}
+                        <a className='forgotp' href='/'><p className='nt' onClick={this.signstate}>Already Registered?</p></a>
                         <button className="btn2 login-btn" disabled={isSubmitting} type='submit'>Register</button>
                     </form>
                 );

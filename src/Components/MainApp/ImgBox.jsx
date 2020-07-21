@@ -2,12 +2,12 @@ import React from 'react';
 import 'tachyons';
 import '../../styles/facerec.css';
 
-function ImgBox ({ImgURL,boxes}) {
+function ImgBox ({ImgURL,boxes,localinput}) {
         return(
             <div className = 'flex justify-center ma'>
                 <div className ='absolute mt2'>
                      {/*eslint-disable-next-line*/}
-                    <img id = 'inputimg' src={ImgURL} height = 'auto' width = '500px'></img> 
+                    <img id = 'inputimg' src={ImgURL === ''?localinput:ImgURL} height = 'auto' width = '500px'></img> 
                     {   
                         boxes !== undefined?
                         boxes.map((box,key) => {

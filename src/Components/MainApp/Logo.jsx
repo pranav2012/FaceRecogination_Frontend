@@ -6,7 +6,7 @@ function Logo() {
     return(
         <div className="logospace">
             <Tilt className='Tilt br2 shadow-1' options={{max:25}} style={{height:150, width: 190, background:'transparent'}}>
-                <img classname='logoimg' style={{height:130,width:170}} src={logo} alt='logo' />
+                <img className='logoimg' style={{height:130,width:170}} src={logo} alt='logo' />
             </Tilt>
         </div>
     );

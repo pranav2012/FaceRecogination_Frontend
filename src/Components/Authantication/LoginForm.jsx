@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from './Login';
 import Signup from './SignUp';
 import Forgotpass from './Forgotpass'
-import { SOaths, LOaths } from './Oaths';
+import Oaths from './Oaths';
 import '../../styles/login.scss';
 import Nav1 from './Nav1';
 
@@ -13,6 +13,7 @@ class Loginform extends Component {
             pos: false,
             issignup: false,
             frgt: false,
+            glog: 0,
         }
     }   
     loginslider = () => {
@@ -26,6 +27,29 @@ class Loginform extends Component {
     frgtpass = () => {
         this.setState(prevState => ({ frgt: !prevState.frgt }));
     }
+
+    googlesignup = (email) => {
+        fetch(this.props.backend_url +'/gauth',{
+          method: 'post',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email
+          })
+        })
+          .then(res=> res.json())
+          .then(data=>{
+            if(data.status === 'sucess'){
+              this.props.loaduser(data);
+              this.props.signclick('home');
+            }
+            else{
+              this.setState({glog:1});
+            }
+          })
+          .catch(err=>console.log('error fetching token'))
+      }
+
+
     render() {
         return (
             <>
@@ -36,7 +60,7 @@ class Loginform extends Component {
                         <div className={`text ${this.state.pos ? 'show-hide fl' : ''}`}>
                             <div className={`${this.state.frgt ? 'hide' : 'show-hide'}`}>
                                 <div className={`leftside ${this.state.issignup ? 'hide' : 'showhide'}`}>
-                                    <Login backend_url={this.props.backend_url} loaduser={this.props.loaduser} frgtpass={this.frgtpass} signupfunc={this.signupfunc} signclick={this.props.signclick}/>
+                                    <Login glog={this.state.glog} backend_url={this.props.backend_url} loaduser={this.props.loaduser} frgtpass={this.frgtpass} signupfunc={this.signupfunc} signclick={this.props.signclick}/>
                                 </div>
                                 <div className={`signleft ${this.state.issignup ? 'show-hide' : 'hide'}`}>
                                     <Signup  signupfunc={this.signupfunc} backend_url={this.props.backend_url}/>
@@ -50,7 +74,7 @@ class Loginform extends Component {
                                 <h3 className={`${this.state.issignup ? 'sh' : 'lh'}`}>OR</h3>
                             </div>
                             <div className={`${this.state.issignup ? 'srightside' : 'rightside'} ${this.state.frgt ? 'hide' : 'show-hide'}`}>
-                                {this.state.issignup ? <SOaths /> : <LOaths />}
+                            <Oaths googlesignup={this.googlesignup}/>
                             </div>
                         </div>
                     </div>
