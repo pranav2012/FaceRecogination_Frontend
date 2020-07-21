@@ -68,12 +68,15 @@ class Signup extends Component{
 
             validationSchema={Yup.object().shape({
                 name: Yup.string()
+                    .trim()
                     .required("required")
                     .matches(/^[a-z A-Z]+$/,"invalid name"),// eslint-disable-line
                 email: Yup.string()
+                    .trim()
                     .email()
                     .required("Required"),
                 user: Yup.string()
+                    .trim()
                     .required("Required")
                     .min(4,"too short")
                     .matches(/^[a-zA-Z0-9\_\.]+$/,"invalid username"),  // eslint-disable-line
