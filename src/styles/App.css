@@ -5,14 +5,44 @@
     justify-content: space-between;
     list-style: none;
 }
+.App{
+    height: 100%;
+    overflow: hidden;
+}
+
+.logospace{
+    display:flex;
+    justify-content: center;
+}
 
 .navlogo{
     font-family: 'Pacifico', cursive;
     font-size: 32px;
     margin-right: auto;
 }
+
 .navlogo:hover{
 cursor: pointer;
+}
+
+.inpct{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.inpimg{
+        display: flex;
+        justify-content: center;
+        width:8%;
+        padding: 8px;
+        background: #800080;
+        color: beige;
+        border-radius: 10px;
+        font-family: fantasy;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
 }
 
 .navp{
@@ -29,16 +59,14 @@ cursor: pointer;
     cursor: pointer;
 }
 
-.Tilt{
-    margin-left: 43%;
-}
 .Tilt img{
     margin-top: 5%;
     margin-left: 6%;
 }
-.inf{
+
+.inf,.fdtct{
     font-family: fantasy;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     font-style: italic;
     margin-top: 24px;
@@ -49,9 +77,11 @@ cursor: pointer;
     margin-left: 28%;
     margin-top: 22px;
 }
+
 .nbt{
     width : 70%;
 }
+
 #btn{
 width: 18%;
 color: beige;
@@ -67,7 +97,6 @@ height: 36px;
 #btn:hover{
     border-color: black;
     font-size: 16px;
-    
 }
 
 #inbox{
@@ -89,6 +118,7 @@ height: 36px;
 .nameusr{
     color: yellow;
 }
+
 .rank{
     color: yellow;
     font-size: 40px;
@@ -102,7 +132,7 @@ height: 36px;
 }
 @media screen and (max-width:1096px){
     .inf{
-        font-weight: 600;
+        font-weight: 800;
         font-size: 17px;
     }
 
@@ -143,9 +173,6 @@ height: 36px;
         height: 30px;
         margin-top: 16px;
         margin-left: 120px;
-    }
-    .Tilt {
-        margin-left: 38%;
     }
     .userg{
         font-size: 25px;
@@ -198,14 +225,16 @@ height: 36px;
         margin-top: 16px;
         margin-left: 132px;
     }
-    .Tilt {
-        margin-left: 38%;
-    }
     .userg{
         font-size: 25px;
     }
     .rank{
         font-size: 36px;
+    }
+    .inpimg{
+        width: 16%;
+        font-size: 10px;
+        font-weight: 600;
     }
 
 }
@@ -213,8 +242,13 @@ height: 36px;
 @media screen and (max-width:488px){
  
     .inf{
-        font-weight: 600;
-        font-size: 11px;
+        font-weight: 800;
+        font-size: 10px;
+    }
+    
+    .fdtct{
+        margin-top: 4%;
+        font-size: 13px;
     }
 
     .box{
@@ -225,6 +259,7 @@ height: 36px;
     .nav{
         margin-right: 20px;
     }
+
     .navp{
         font-size: 13px;
     }
@@ -244,25 +279,37 @@ height: 36px;
     .nav{
         padding-left: 0;
     }
+
     .navlogo{
         font-size: 18px;
         padding-right: 14%;
         padding-left: 4%;
     }
+
     #btn{
         font-size: 14px;
-        width: 40%;
+        width: 36%;
         height: 30px;
         margin-top: 14px;
         margin-left: 46px;
     }
-    .Tilt {
-        margin-left: 27%;
-    }
+
     .userg{
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 7%;
     }
+
     .rank{
-        font-size: 30px;
+        font-size: 28px;
+        margin-bottom: 8%;
+    }
+
+    .inpimg{
+        width: 16%;
+        font-size: 10px;
+        font-weight: 600;
+    }
+    #inputimg{
+        width: 300px;
     }
 }

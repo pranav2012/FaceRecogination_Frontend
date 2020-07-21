@@ -14,8 +14,8 @@
     margin-right: 5.5vw;
 }
 .login-text {
-    width: 850px;
-    background: linear-gradient(to left, #ab68ca, #de67a3); 
+    width: 850px; 
+    background: linear-gradient(to left, #1a2744, #013464); 
     position: absolute;
     top: -300px;
     box-sizing: border-box;
@@ -40,7 +40,8 @@
 
     a, a:visited {
         font-size: 36px;
-        color: #fff;
+        //color: #fff;
+        color: #90c2fc;
         font-family: 'Courier New', Courier, monospace;
         text-decoration: none;  
         font-weight: bold;
@@ -50,7 +51,7 @@
     hr {
         width: 7vw;
         float: left;
-        color: white;
+        color: #45adff;
         font-size: 16px;
     }
 
@@ -59,10 +60,10 @@
         height: 40px;
         width: 300px;
         border-radius: 2px;
-        background-color: #444;
+        background-color: #455781;
         opacity: 0.6;
         outline: none;
-        color: #fff;
+        color: white;
         padding-left: 10px;
     }
 
@@ -82,9 +83,9 @@
 
     .signup-btn, .login-btn {
         background: transparent;
-        border: 2px solid #fff;;
+        border: 2px solid #45adff;
         border-radius: 2px;
-        color: #fff;
+        color: #90c2fc;
         margin-right: 9px;
         margin-top: 28px;
     }
@@ -94,7 +95,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: #696a86;
+    background: #8eafd6;
     border: 2px solid #fff;
     position: absolute;
     bottom: -30px;
@@ -106,8 +107,8 @@
 }
 
 .call-text {
-    background-color: #fff;
-    width: 850px;
+    background-color:#628caf;
+    width: 850px; 
     height: 450px;
     position: absolute;
     bottom: 0;
@@ -118,10 +119,10 @@
     h1 {
         font-size: 42px;
         margin-top: 10%;
-        color: #696a86;
+        color: #0b2f58;
 
         span {
-            color: #333;
+            color: #8fc2fe;
             font-weight: bolder;    
         }
     }
@@ -132,8 +133,8 @@
         border: none;
         border-radius: 20px;
         cursor: pointer;
-        background: linear-gradient(to left, #ab68ca, #de67a3); 
-        color: #fff;
+        background: #162949 ; 
+        color: #90c2fc;
         font-weight: bolder;
         margin-top: 30px;
         outline: none;
@@ -177,20 +178,30 @@ i {
       .vl,.svl{
         position: absolute;
         top:0;
-        left:42px;
-        border-left: 2px solid white;
+        border-left: 2px solid #45adff;
         height: 350px;
+      }
+      .vl{
+        left:42px;
+      }
+      .svl{
+        left:10px;
       }
     .mid h3{
         position: absolute;
         top: 140px;
-        left: 21px;
+        color: #90c2de;
         letter-spacing: 3px;
         font-size: 28px;
         font-family: cursive;
-        background: #c168b9;
+        background: #0c2e55;
     }
-
+    .lh{
+        left: 21px;
+    }
+    .sh{
+        left:-11px;
+    }
     .leftside{
       margin-right: 42px;
     }
@@ -203,10 +214,10 @@ i {
       
       button{
         background: transparent;
-        border: 2px solid #fff;;
+        border: 2px solid #45adff;
         border-radius: 2px;
         width: 18vw;
-        color: #fff;
+        color: #90c2ed;
         transition: 0.8s;
         position: relative;
       }
@@ -230,10 +241,10 @@ i {
         height: 28px;
         width: 300px;
         border-radius: 2px;
-        background-color: #444;
+        background-color: #455781;
         opacity: 0.6;
         outline: none;
-        color: #fff;
+        color: white;
         padding-left: 10px;
     }
     .top{
@@ -251,7 +262,7 @@ i {
     }     
 } 
 .btn1:hover,.btn2:hover{
- color: rgb(250, 110, 255);
+ color:#0a2f58;
 }
 .btn1::before, .btn2::before{
  content: "";
@@ -259,7 +270,7 @@ i {
  left: 0;
  width: 100%;
  height: 0%;
- background: #fff;
+ background: #45adff;
  z-index: -1;
  transition: 0.8;
 }
@@ -282,6 +293,9 @@ border-radius: 40% 40% 0 0 ;
     }
     hr{
         width: 80%;
+    }
+    p{
+        color: #90c2fc;
     }
 }
 .error{
@@ -490,12 +504,12 @@ border-radius: 40% 40% 0 0 ;
 
  @media screen and (max-width:488px){
     .wrapper {
-        width: 320px;
+        width: 340px;
         height: 390px;
         margin: 130px auto;
     }
     .login-text {
-        width: 320px;
+        width: 340px;
         top: -111px;
         padding: 6%;
     }
@@ -510,9 +524,11 @@ border-radius: 40% 40% 0 0 ;
         width: 42px;
         height: 42px;
         bottom: -25px;
-        left: 138px;
+        left: 146px;
     }
-
+    .leftside{
+        margin-left: 6px;
+    }
     .call-text {
         width: 380px;
         height: 310px;
@@ -559,9 +575,9 @@ border-radius: 40% 40% 0 0 ;
             height: 25px;
             width: 150px;
             font-size: 11px;
-            color: black;
+            color: white;
             font-weight: bolder;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid #45adff;
             background: none;
             padding-left: 6px;
         }
@@ -580,7 +596,7 @@ border-radius: 40% 40% 0 0 ;
     
         .signup-btn, .login-btn {
             border-radius: 18px;
-            color: #fff;
+            color: #90c2fc;
             margin-right: 6px;
             margin-top: 18px;
         }
@@ -594,17 +610,17 @@ border-radius: 40% 40% 0 0 ;
     }
     .vl{
         top:0;
-        left:-24px;
+        left:-10px;
         height: 260px;
     }
    .mid .lh{
         top: 93px;
-        left: -39px;
+        left: -25px;
         letter-spacing: 3px;
         font-size: 19px;
       }
       .rightside{
-        margin:86px 0 0 0;
+        margin:100px 0 0 20px;
         button{
           border-radius: 18px;
           width: 96px;
@@ -630,6 +646,16 @@ border-radius: 40% 40% 0 0 ;
             width: 110px;
             margin-left: 22px;
         }
+    }
+    .btn1:hover,.btn2:hover{
+        background: #45adff ;
+        color:#0a2f58;
+    }
+    .btn1:before,.btn2:before{
+        border-radius: 0 0 0 0;
+    }
+    .btn1:hover::before,.btn2:hover::before{
+        height: 0;
     }
     .signleft{
         input {
@@ -657,17 +683,17 @@ border-radius: 40% 40% 0 0 ;
     } 
     .svl{
             top: 10px;
-            left: 0px;
+            left: -5px;
             height: 300px;
         }
       .mid .sh{
             top: 126px;
-            left: -14px;
+            left: -20px;
             letter-spacing: 3px;
             font-size: 19px;
           }
           .srightside{
-            margin:93px 0 0 13px;
+            margin:120px 0 0 22px;
             button{
               border-radius: 18px;
               width: 96px;
