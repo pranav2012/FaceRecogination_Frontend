@@ -40,6 +40,7 @@ class Login extends Component{
 
                 validationSchema={Yup.object().shape({
                     email: Yup.string()
+                        .trim()
                         .required("Required")
                         .min(4,"too short")
                         .matches(/^[a-zA-Z0-9\_\.\@]+$/,"invalid username"),  // eslint-disable-line
