@@ -6,12 +6,12 @@ const clientid = {
                     local: "728214676777-ma4ed69te73nj6k09o470kj6nrvdaq77.apps.googleusercontent.com"
                 }
 
-const googlebtn = (responseGoogle) =>{
+const googlebtn = (responseGoogle,btntext) =>{
     return(
         <GoogleLogin
                 clientId={clientid.heroku}
                 render={renderProps => (
-                    <button onClick={renderProps.onClick}><i className="fa fa-google"> <span className='authname'>Google</span></i></button>
+                    <button onClick={renderProps.onClick}><i className="fa fa-google"> <span className='authname'>{btntext}</span></i></button>
                 )}
                 onSuccess={responseGoogle}
                 cookiePolicy={'single_host_origin'}
@@ -26,7 +26,7 @@ const Oaths = ({googlesignup}) => {
     }
     return (
         <div className='oth'>
-          {googlebtn(responseGoogle)}
+          {googlebtn(responseGoogle, "LogIn")}
         </div>
     );
 }
@@ -38,7 +38,7 @@ const Soaths = ({googleregister}) => {
     }
     return (
         <div className='oth'>
-          {googlebtn(responseGoogle)}
+          {googlebtn(responseGoogle, "SignUp")}
         </div>
     );
 }
