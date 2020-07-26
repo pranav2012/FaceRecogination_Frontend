@@ -7,13 +7,13 @@ class Forgotpass extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            found: -1
+            found: false
         }
     } 
    
     Form = () => (
         <>
-            <a href="#h">Forgot Password</a>
+            <a href="/#">Forgot Password</a>
             <hr />
             <br />
             <Formik
@@ -29,10 +29,10 @@ class Forgotpass extends Component {
                     }).then(response => response.json())
                     .then(data => {
                         if(data === 'sucess'){
-                            this.setState({found:1});
+                            this.setState({found:true});
                         }
                         else{
-                            this.setState({found:0});
+                            this.setState({found:false});
                         }
                     });
                     resetForm({values:''});
@@ -73,8 +73,8 @@ class Forgotpass extends Component {
                                 <div className="input-feedback">{errors.email}</div>
                             )}
                             <br />
-                            {this.state.found===1 && <p>Password Reset Email Sent Please Check your Email.</p>}
-                            {this.state.found === 0 && <p>No such User Found!</p>}
+                            {this.state.found && <p className='err'>Password Reset Email Sent Please Check your Email.</p>}
+                            {!this.state.found  && <p className='err'>No such User Found!</p>}
                             <button className="btn2 signup-btn" disabled={isSubmitting} type='submit'>Reset Password</button>
                             <button className="btn1 login-btn" type='button' onClick={this.props.frgtpass}>Log In</button>
                         </form>

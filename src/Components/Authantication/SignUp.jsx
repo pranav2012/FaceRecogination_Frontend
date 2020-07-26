@@ -7,7 +7,6 @@ class Signup extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            issubmitted: 0,
             isregistered:0
         }
     } 
@@ -19,19 +18,12 @@ class Signup extends Component{
     signstate = () =>{
         this.props.signupfunc();
         this.setState({isregistered:0});
-        this.setState({issubmitted:0});
-    }
-
-    checkregister = () => {
-        if(this.state.issubmitted === 1){
-            this.signstate();
-        } 
     }
     
     render(){
     return (
     <>
-        <a href="#h">Sign-Up</a>
+        <a href="/#">Sign-Up</a>
         <hr />
         <Formik
             initialValues={{ name: "", user: "", email: "", password: ""}}
@@ -48,20 +40,14 @@ class Signup extends Component{
                         })
                     }).then(response=>response.json())
                     .then(data => {
-                        if(data === 'sucess'){
-                            this.setState({issubmitted:1});
-                            this.setState({isregistered:0});
-                            setTimeout(this.checkregister,2000);
-                        }
-                        else if(data === 'error'){
-                            this.setState({isregistered:1});
-                            this.setState({issubmitted:0});
+                        if(data.status === 'sucess'){
+                            this.props.loaduser(data);
+                            this.props.signclick('home')
                         }
                         else{
-                            this.setState({issubmitted:0});
-                            this.setState({isregistered:0});
+                            this.setState({isregistered:1});
                         }
-                    });
+                    }).catch(console.log('cant register!'));
                     resetForm({values: ''});
 
                 }}
@@ -157,9 +143,8 @@ class Signup extends Component{
                             <div className="input-feedback">{errors.password}</div>
                         )}
                         <br />
-                        {this.state.issubmitted===1 && <p className='err'>Succesfully Registered! Redirecting...</p>}
-                        {this.state.isregistered===1 && <p className='err'>Already Registered or Username is Taken!</p>}
-                        <a className='forgotp' href='/'><p className='nt' onClick={this.signstate}>Already Registered?</p></a>
+                        {(this.state.isregistered===1 && <p className='err'>Already Registered or Username is Taken!</p>) || (this.props.greg === 1 && <p className='err'>Already Registered!</p>)}
+                        <a className='forgotp' href='/#'><p className='nt' onClick={this.signstate}>Already Registered?</p></a>
                         <button className="btn2 login-btn" disabled={isSubmitting} type='submit'>Register</button>
                     </form>
                 );
