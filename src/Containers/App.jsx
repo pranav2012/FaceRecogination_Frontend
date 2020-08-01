@@ -89,11 +89,11 @@ class App extends Component {
   loaduser = (user) => {
     this.setState({
       user: {
-        name: user.username,
+        name: (user.username.split(' ').length <= 1)?user.username:user.username.split(' ').slice(0, -user.username.split(' ').length + 1).join(' '),
         enteries: user.enteries
       }
     }, () => {
-      localStorage.setItem('username', user.username);
+      localStorage.setItem('username',(user.username.split(' ').length <= 1)?user.username:user.username.split(' ').slice(0, -user.username.split(' ').length + 1).join(' '));
       localStorage.setItem('enteries', user.enteries);
       localStorage.setItem('id', user.id);
     });
@@ -221,11 +221,11 @@ class App extends Component {
           <Particles params={particles_options} className='particles' />
           <Switch>
             <Route exact path='/'>
-              {this.state.signclick === 'loggedout' ? <Redirect to='/' /> : <Redirect to='/dashboard' />}
+              {this.state.signclick === 'loggedout' ? <Redirect to='/' /> : <Redirect to = {'/dashboard/'+ this.state.user.id} />}
               <Out loaduser={this.loaduser} logout={this.logout} signclick={this.signout} backend_url={backend_url} />
             </Route>
-            <Route exact path='/dashboard'>
-              {this.state.signclick === 'home' ? <Redirect to='/dashboard' /> : <Redirect to='/' />}
+            <Route exact path='/dashboard/:id'>
+              {this.state.signclick === 'home' ? <Redirect to = {'/dashboard/'+ this.state.user.id} /> : <Redirect to='/' />}
               <InnerApp resetval={this.resetval} setuploadstate={this.setuploadstate} setimgurl={this.setimgurl} faces={this.state.faces} boxes={this.state.boxes} onInputChange={this.onInputChange} localinput={this.state.localinput} ImgURL={this.state.input} onSubmit={this.onSubmit} logout={this.logout} />
             </Route>
             <Route exact path='/forgotpass'>
