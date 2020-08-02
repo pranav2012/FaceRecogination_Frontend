@@ -90,7 +90,7 @@ class Login extends Component{
                                 <div className="input-feedback">{errors.password}</div>
                             )}
                             <br />
-                            <a href='/#' className='forgotp' onClick={this.props.frgtpass}><p className='nt'>Forgot Password?</p></a>
+                            <a href='/#' className='forgotp' onClick={this.props.frgtpass}><p className='nt'>Go back to home </p></a>
                             {(this.state.log === 1 && <p className='err'>Invalid username or Password</p>) || (this.props.glog === 1 && <p className='nt'>Google Login failed!</p>)}
                             <button type='submit' disabled={isSubmitting} className="btn1 login-btn">Log In</button>
                             <button className="btn2 signup-btn" type='button' onClick={this.props.signupfunc}>Sign Up</button>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import Particles from 'react-particles-js';
 import InnerApp from './innerApp';
-import ResetPass from '../Components/Authantication/Pop';
 import Out from './Out';
 import Nomatch from '../Components/404';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
@@ -34,7 +33,6 @@ class App extends Component {
       uploadclicked: false,
       imginbase64: '',
       localinput: '',
-      resetpass: false,
       user: {
         name: localStorage.getItem('username'),
         enteries: localStorage.getItem('enteries'),
@@ -227,13 +225,6 @@ class App extends Component {
             <Route exact path='/dashboard/:id'>
               {this.state.signclick === 'home' ? <Redirect to = {'/dashboard/'+ this.state.user.id} /> : <Redirect to='/' />}
               <InnerApp resetval={this.resetval} setuploadstate={this.setuploadstate} setimgurl={this.setimgurl} faces={this.state.faces} boxes={this.state.boxes} onInputChange={this.onInputChange} localinput={this.state.localinput} ImgURL={this.state.input} onSubmit={this.onSubmit} logout={this.logout} />
-            </Route>
-            <Route exact path='/forgotpass'>
-              {this.state.resetpass ? <Redirect to='/forgotpass' /> : <Redirect to='/' />}
-              <ResetPass />
-            </Route>
-            <Route exact path='/reset/pass/user/:id'>
-              <Redirect to='/forgotpass' />
             </Route>
             <Route>
               <Nomatch />
