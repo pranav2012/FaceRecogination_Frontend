@@ -69,7 +69,7 @@ class App extends Component {
             body: JSON.stringify({
               id: localStorage.getItem('id')
             })
-          }).then(response => response.json())
+          }).then(res => res.json())
             .then(count => {
               this.setState({
                 user: { enteries: localStorage.setItem('enteries', count) }
@@ -88,7 +88,8 @@ class App extends Component {
     this.setState({
       user: {
         name: (user.username.split(' ').length <= 1)?user.username:user.username.split(' ').slice(0, -user.username.split(' ').length + 1).join(' '),
-        enteries: user.enteries
+        enteries: user.enteries,
+        id: user.id
       }
     }, () => {
       localStorage.setItem('username',(user.username.split(' ').length <= 1)?user.username:user.username.split(' ').slice(0, -user.username.split(' ').length + 1).join(' '));
@@ -196,7 +197,7 @@ class App extends Component {
                   body: JSON.stringify({
                     id: localStorage.getItem('id')
                   })
-                }).then(response => response.json())
+                }).then(res => res.json())
                   .then(count => {
                     this.setState({
                       user: { enteries: localStorage.setItem('enteries', count) }

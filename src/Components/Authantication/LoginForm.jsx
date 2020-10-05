@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Login from './Login';
 import Signup from './SignUp';
-import {Soaths, Oaths} from './Oaths';
+import { Soaths, Oaths } from './Oaths';
 import '../../styles/login.scss';
 import Nav1 from './Nav1';
 
@@ -23,36 +23,15 @@ class Loginform extends Component {
         this.setState(prevState => ({ issignup: !prevState.issignup }));
     }
 
-    googleregister = (name,email) => {
+    googleauthentication = (name, email) => {
         let username = email.replace(/@[^@]+$/, '');
-        fetch(this.props.backend_url + '/gregister', {
+        fetch(this.props.backend_url + '/gauth', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name: name,
                 email: email,
-                username:username
-            })
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.status === 'sucess') {
-                    this.props.loaduser(data);
-                    this.props.signclick('home');
-                }
-                else{
-                    this.setState({greg: 1});
-                }
-            })
-            .catch(err => console.log('error fetching token'))
-        }
-
-    googlesignup = (email) => {
-        fetch(this.props.backend_url + '/gauth', {
-            method: 'post',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                email: email
+                username: username
             })
         })
             .then(res => res.json())
@@ -62,13 +41,14 @@ class Loginform extends Component {
                     this.props.signclick('home');
                 }
                 else {
-                    this.setState({ glog: 1 });
+                    this.setState({ greg: 1, glog: 1 });
                 }
             })
             .catch(err => console.log('error fetching token'))
     }
 
-    frgtpass = () =>{
+
+    frgtpass = () => {
         this.loginslider();
     }
 
@@ -93,7 +73,7 @@ class Loginform extends Component {
                                 <h3 className={`${this.state.issignup ? 'sh' : 'lh'}`}>OR</h3>
                             </div>
                             <div className={`show-hide ${this.state.issignup ? 'srightside' : 'rightside'}`}>
-                                {this.state.issignup ? <Soaths googleregister={this.googleregister}/> : <Oaths googlesignup={this.googlesignup}/>}
+                                {this.state.issignup ? <Soaths googleauthentication={this.googleauthentication} /> : <Oaths googleauthentication={this.googleauthentication} />}
                             </div>
                         </div>
                     </div>
